@@ -8,16 +8,52 @@ body {
     color: #333;
 }
 
+.button {
+    cursor: hand;
+    background: linear-gradient(to bottom, rgba(125,126,125,1) 0%,rgba(89,89,89,1) 100%); 
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bolder;
+    color: white;
+    font-family: helvetica;
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    -o-transition: all 0.1s;
+    transition: all 0.1s;
+    margin: 0px auto;
+}
+
+.insertcoins {
+    margin: 0px auto;
+    background-size:100%;
+    background-size: cover; 
+    background-image: url("../images/insertcoins.jpg");
+    width: 300px; 
+    height: 200px;
+}
+
+.startgame {
+    text-align: center;
+}
+
 .container {
     height: 1020px;
     background: #cacaca;
 }
 
 .battleground {
+    display: none;
     margin: 0px auto;
     height: 700px;
     width : 1000px;
     background: #000000;
+
+    &.active {
+        display: block;
+    }
 }
 
 .gametitle {
@@ -45,6 +81,30 @@ body {
     background: #cacaca;
     margin-right: 50px;
     margin-top: 50px;
+}
+
+.p1-playername {
+    width: 200px;
+    height: 30px;
+    background: #ACADAD;
+    text-align: center;
+    font-family: Helvetica;
+    line-height: 30px;
+    color: #000000;
+    margin: 0px auto;
+    margin-top: 10px;
+}
+
+.p2-playername {
+    width: 200px;
+    height: 30px;
+    background: #ACADAD;
+    text-align: center;
+    font-family: Helvetica;
+    line-height: 30px;
+    color: #000000;
+    margin: 0px auto;
+    margin-top: 10px;
 }
 
 .playerimage1 {
@@ -281,5 +341,11 @@ body {
     -moz-filter: brightness(80%);
     -o-filter: brightness(80%);
     filter: brightness(80%);
+}
+
+.dead {
+    color: red;
+    font-size: 20px;
+    font-family: Helvetica;
 }
 
