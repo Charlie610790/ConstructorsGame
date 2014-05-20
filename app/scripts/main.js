@@ -9,6 +9,7 @@ $('.startbutton').click(function(){
 });
 
 function Hero () {
+    this.name = "HERO"
     this.health = 100;
  
     this.punch = function(target) {
@@ -22,12 +23,14 @@ function Hero () {
     this.special = function(target) {
         target.health = target.health - 25;
     };
+
     this.life = function(target) {
         target.health = target.healty = 100;
     };
 }
 
 function Enemy (level) {
+    this.name = "Enemy"
     this.health = 100;
  
     this.punch = function(target) {
@@ -37,9 +40,11 @@ function Enemy (level) {
     this.kick = function(target) {
         target.health = target.health - 15;
     };
+
     this.special = function(target) {
         target.health = target.health - 25;
     };
+
     this.life = function(target) {
         target.health = target.healty = 100;
     };
@@ -48,23 +53,23 @@ function Enemy (level) {
 function playerStats (player) {
   if (player.health < 1) {
     $('.p1-playerhealth').text("YOU DIED").addClass('dead')
+    $('.continue').html('<a href=".">Click Here To Continue</a>').addClass('active')
+
     } 
     else {
     $('.p1-playerhealth').text("Health: " + player.health)
     }
 }
  
-
   function enemyStats (player) {
   if (player.health < 1) {
-    $('.p2-playerhealth').html("<span class='dead'>You Died!</span><span class='continue'>Click To Continue</span>")
-    // $('.p2-playerhealth').text("YOU DIED").addClass('dead').addClass('continue')
+    $('.p2-playerhealth').html("<span class='dead'>BOSS DEFEATED</span>")
+    
     } 
     else {
     $('.p2-playerhealth').text("Health: " + player.health)
     }
 }
-
 
 $('.p1-punch-button').click(function(){
   player.punch(enemy);
@@ -108,65 +113,10 @@ $('.p2-special-button').click(function(){
   enemyStats(enemy); 
 })
 
-// $('.p1-playerhealth').map(function() {
-//         console.log (player.health);
+$('.p1-playername').map(function() {
+        $(this).text(Hero.name);
+    });
 
-//         $(this).text('PLAYER HEALTH:' + player.health);
-//     });
-
-
-////////////////////FROM HERE UP WORKS///////////////////////
-
-
-//////// var player1=
-////////    {
-////////    'name':'Hero',
-////////    'health':100,
-//////// };
-
-//////// var player2=
-////////    {
-////////    'name':'Enemy',
-////////    'health':100,
-//////// };
-
-//////// $('.p1-punch-button').click(function(){
-////////     player1.punch(enemy);
-////////     $('.p1-playerhealth').prepend('You attack!');
-
-//////// });
-
-//////// PLAYER 1 PUNCH BUTTON BEGIN
-//////// $('.p1-punch-button').click(function() {
-//////// 	$(this).parent('.p1-playerhealth').text('PLAYER HEALTH:' + (player1.health - 10));
-//////// });
-
-//////// $('.p1-punch-button').click(function() {
-//////// 	$(this).parent('p1-playerhealth').append('blah');
-//////// }
-
-//////// PLAYER 1 PUNCH BUTTON END
-
-//////// $('.p1-playerhealth').map(function() {
-////////         console.log (player1.health);
-
-////////         $(this).text('PLAYER HEALTH:' + player1.health);
-////////     });
-
-//////// $('.p2-playerhealth').map(function() {
-////////         console.log (player2.health);
-
-////////         $(this).text('PLAYER HEALTH:' + player2.health);
-////////     });
-
-//////// $('.p1-playername').map(function() {
-////////         console.log (player1.name);
-
-////////         $(this).text(player1.name);
-////////     });
-
-//////// $('.p2-playername').map(function() {
-////////         console.log (player2.name);
-
-////////         $(this).text(player2.name);
-////////     });
+$('.p2-playername').map(function() {
+        $(this).text(Enemy.name);
+    });
