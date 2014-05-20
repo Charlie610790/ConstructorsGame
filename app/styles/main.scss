@@ -128,7 +128,7 @@ body {
 }
 
 .p1-playerhealth {
-    width: 200px;
+    
     height: 30px;
     background: #ACADAD;
     text-align: center;
@@ -140,7 +140,7 @@ body {
 }
 
 .p2-playerhealth {
-    width: 200px;
+    
     height: 30px;
     background: #ACADAD;
     text-align: center;
@@ -172,6 +172,37 @@ body {
     -moz-transition: all 0.1s;
     -o-transition: all 0.1s;
     transition: all 0.1s;
+
+    &:active { 
+    -webkit-filter: brightness(80%); 
+    -moz-filter: brightness(80%);
+    -o-filter: brightness(80%);
+    filter: brightness(80%);
+    }   
+
+    &:hover {
+    -webkit-filter: brightness(120%); 
+    -moz-filter: brightness(120%);
+    -o-filter: brightness(120%);
+    filter: brightness(120%);
+    }
+}
+
+.p1-life-button {
+    display: inline-block;
+    background: linear-gradient(to bottom, rgba(125,126,125,1) 0%,rgba(89,89,89,1) 100%); 
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bolder;
+    color: white;
+    font-family: helvetica;
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    -o-transition: all 0.1s;
+    transition: all 0.1s;
 }
 
 .p1-kick-button {
@@ -189,6 +220,20 @@ body {
     -moz-transition: all 0.1s;
     -o-transition: all 0.1s;
     transition: all 0.1s;
+
+    &:hover {
+    -webkit-filter: brightness(120%); 
+    -moz-filter: brightness(120%);
+    -o-filter: brightness(120%);
+    filter: brightness(120%);
+    }
+
+    &:active {
+    -webkit-filter: brightness(80%); 
+    -moz-filter: brightness(80%);
+    -o-filter: brightness(80%);
+    filter: brightness(80%);
+    }
 }
 
 .p1-special-button {
@@ -206,6 +251,20 @@ body {
     -moz-transition: all 0.1s;
     -o-transition: all 0.1s;
     transition: all 0.1s;
+
+    &:active {
+    -webkit-filter: brightness(80%); 
+    -moz-filter: brightness(80%);
+    -o-filter: brightness(80%);
+    filter: brightness(80%);
+    }
+
+    &:hover {
+    -webkit-filter: brightness(120%); 
+    -moz-filter: brightness(120%);
+    -o-filter: brightness(120%);
+    filter: brightness(120%);
+    }
 }
 
 .p2-punch-button {
@@ -223,6 +282,20 @@ body {
     -moz-transition: all 0.1s;
     -o-transition: all 0.1s;
     transition: all 0.1s;
+
+    &:hover {
+    -webkit-filter: brightness(120%); 
+    -moz-filter: brightness(120%);
+    -o-filter: brightness(120%);
+    filter: brightness(120%);
+    }
+
+    &:active {
+    -webkit-filter: brightness(80%); 
+    -moz-filter: brightness(80%);
+    -o-filter: brightness(80%);
+    filter: brightness(80%);
+    }
 }
 
 .p2-kick-button {
@@ -240,6 +313,20 @@ body {
     -moz-transition: all 0.1s;
     -o-transition: all 0.1s;
     transition: all 0.1s;
+
+    &:active { 
+    -webkit-filter: brightness(80%); 
+    -moz-filter: brightness(80%);
+    -o-filter: brightness(80%);
+    filter: brightness(80%);
+    }
+
+    &:hover {
+    -webkit-filter: brightness(120%); 
+    -moz-filter: brightness(120%);
+    -o-filter: brightness(120%);
+    filter: brightness(120%);
+    }
 }
 
 .p2-special-button {
@@ -257,90 +344,21 @@ body {
     -moz-transition: all 0.1s;
     -o-transition: all 0.1s;
     transition: all 0.1s;
-}
 
-.p1-punch-button:hover {
-    -webkit-filter: brightness(120%); 
-    -moz-filter: brightness(120%);
-    -o-filter: brightness(120%);
-    filter: brightness(120%);
-}
-
-.p1-kick-button:hover {
-    -webkit-filter: brightness(120%); 
-    -moz-filter: brightness(120%);
-    -o-filter: brightness(120%);
-    filter: brightness(120%);
-}
-
-.p1-special-button:hover {
-    -webkit-filter: brightness(120%); 
-    -moz-filter: brightness(120%);
-    -o-filter: brightness(120%);
-    filter: brightness(120%);
-}
-
-.p2-punch-button:hover {
-    -webkit-filter: brightness(120%); 
-    -moz-filter: brightness(120%);
-    -o-filter: brightness(120%);
-    filter: brightness(120%);
-}
-
-.p2-kick-button:hover {
-    -webkit-filter: brightness(120%); 
-    -moz-filter: brightness(120%);
-    -o-filter: brightness(120%);
-    filter: brightness(120%);
-}
-
-.p2-special-button:hover {
-    -webkit-filter: brightness(120%); 
-    -moz-filter: brightness(120%);
-    -o-filter: brightness(120%);
-    filter: brightness(120%);
-}
-
-.p1-punch-button:active {
+    &:active {
     -webkit-filter: brightness(80%); 
     -moz-filter: brightness(80%);
     -o-filter: brightness(80%);
     filter: brightness(80%);
-}
+    }
 
-.p1-kick-button:active {
-    -webkit-filter: brightness(80%); 
-    -moz-filter: brightness(80%);
-    -o-filter: brightness(80%);
-    filter: brightness(80%);
-}
+    &:hover {
+    -webkit-filter: brightness(120%); 
+    -moz-filter: brightness(120%);
+    -o-filter: brightness(120%);
+    filter: brightness(120%);
+    }
 
-.p1-special-button:active {
-    -webkit-filter: brightness(80%); 
-    -moz-filter: brightness(80%);
-    -o-filter: brightness(80%);
-    filter: brightness(80%);
-}
-
-.p2-punch-button:active {
-    -webkit-filter: brightness(80%); 
-    -moz-filter: brightness(80%);
-    -o-filter: brightness(80%);
-    filter: brightness(80%);
-}
-
-.p2-kick-button:active {
-    -webkit-filter: brightness(80%); 
-    -moz-filter: brightness(80%);
-    -o-filter: brightness(80%);
-    filter: brightness(80%);
-}
-
-.p2-special-button:active {
-    -webkit-filter: brightness(80%); 
-    -moz-filter: brightness(80%);
-    -o-filter: brightness(80%);
-    filter: brightness(80%);
 }
 
 .dead {
@@ -348,4 +366,8 @@ body {
     font-size: 20px;
     font-family: Helvetica;
 }
-
+.continue {
+    color : blue;
+    font-size: 30px;
+    font-family: Helvetica;
+}

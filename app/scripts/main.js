@@ -22,6 +22,9 @@ function Hero () {
     this.special = function(target) {
         target.health = target.health - 25;
     };
+    this.life = function(target) {
+        target.health = target.healty = 100;
+    };
 }
 
 function Enemy (level) {
@@ -37,6 +40,9 @@ function Enemy (level) {
     this.special = function(target) {
         target.health = target.health - 25;
     };
+    this.life = function(target) {
+        target.health = target.healty = 100;
+    };
 }
 
 function playerStats (player) {
@@ -51,7 +57,8 @@ function playerStats (player) {
 
   function enemyStats (player) {
   if (player.health < 1) {
-    $('.p2-playerhealth').text("YOU DIED").addClass('dead')
+    $('.p2-playerhealth').html("<span class='dead'>You Died!</span><span class='continue'>Click To Continue</span>")
+    // $('.p2-playerhealth').text("YOU DIED").addClass('dead').addClass('continue')
     } 
     else {
     $('.p2-playerhealth').text("Health: " + player.health)
@@ -73,6 +80,12 @@ $('.p1-kick-button').click(function(){
 
 $('.p1-special-button').click(function(){
   player.special(enemy);
+  playerStats(player);
+  enemyStats(enemy); 
+})
+
+$('.p1-life-button').click(function(){
+  player.life(enemy);
   playerStats(player);
   enemyStats(enemy); 
 })
