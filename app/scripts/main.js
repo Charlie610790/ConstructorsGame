@@ -1,5 +1,3 @@
-//BEGIN
-//Start button to start game
 $('.startbutton').click(function(){
     player = new Hero();
     enemy = new Enemy();
@@ -9,13 +7,9 @@ $('.startbutton').click(function(){
     $('.battleground').addClass('active');
 
 });
-//Start button to start game
-//END
 
-//BEGIN
-//Creating contructor for Hero
 function Hero () {
-    this.name = 'HERO';
+    this.name = 'Wolverine';
     this.health = 100;
  
     this.punch = function(target) {
@@ -34,13 +28,9 @@ function Hero () {
         target.health = target.health = 100;
     };
 }
-//Creating contructor for Hero
-//END
 
-//BEGIN
-//Creating contructor for Enemy
 function Enemy (level) {
-    this.name = 'Enemy';
+    this.name = 'Magneto';
     this.health = 100;
  
     this.punch = function(target) {
@@ -59,12 +49,8 @@ function Enemy (level) {
         target.health = target.health = 100;
     };
 }
-//Creating contructor for Enemy
-//END
 
-//BEGIN
-//Creating function to create Hero health and create 'You Died' text upon dying and giving the player an option to continue
- function playerStats (player) {
+function playerStats (player) {
     if (player.health < 1) {
         $('.p1-playerhealth').text('YOU DIED').addClass('dead');
         $('.continue').html('<a href=".">Click Here To Continue</a>').addClass('active');
@@ -74,10 +60,7 @@ function Enemy (level) {
         $('.p1-playerhealth').text('Health: ' + player.health);
     }
 }
-//END
  
-//BEGIN 
-//Creating function for enemy health
 function enemyStats (player) {
     if (player.health < 1) {
         $('.p2-playerhealth').html('<span class="dead">BOSS DEFEATED</span>');
@@ -87,18 +70,15 @@ function enemyStats (player) {
         $('.p2-playerhealth').text('Health: ' + player.health);
     }
 }
-//END
 
-//BEGIN
-//Creating click functions for Hero
 $('.p1-punch-button').click(function(){
     player.punch(enemy);
     playerStats(player);
     enemyStats(enemy);
-    // $('.playerimage2').changeClass('playerimage2-pow');
-    // $('.playerimage2')
-    // // $('.playerimage2').css('background-image', $(this).val() + 'url("../images/player2.jpg")').delay(3800);
+    // $('.playerimage2').addClass('playerimage2-pow');
+    // $('.playerimage2').removeClass('playerimage2-pow');
     //     });
+});
 
 
 $('.p1-kick-button').click(function(){
@@ -118,10 +98,7 @@ $('.p1-life-button').click(function(){
     playerStats(player);
     enemyStats(enemy);
 });
-//END
 
-//BEGIN
-//Creating click functions for Enemy
 $('.p2-kick-button').click(function(){
     enemy.kick(player);
     playerStats(player);
@@ -139,10 +116,7 @@ $('.p2-special-button').click(function(){
     playerStats(player);
     enemyStats(enemy);
 });
-//END
 
-//BEGIN
-//Creating map to search for Hero name and Enemy name in their constructors
 $('.p1-playername').map(function() {
         $(this).text(Hero.name);
     });
@@ -150,4 +124,3 @@ $('.p1-playername').map(function() {
 $('.p2-playername').map(function() {
         $(this).text(Enemy.name);
     });
-//END
